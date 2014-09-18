@@ -6,3 +6,8 @@
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 
+#ts build assets placed here
+build
+
+# let's not check in the built bits for now
+app
