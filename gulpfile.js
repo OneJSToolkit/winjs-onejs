@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var onejsCompiler = require('gulp-onejs-compiler');
 var tsc = require('gulp-tsc');
 var flatten = require('gulp-flatten');
-var add = require('gulp-add-src');
 var less = require('gulp-less');
 var csstojs = require('gulp-csstojs');
 var filter = require('gulp-filter');
