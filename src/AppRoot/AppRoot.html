@@ -1,12 +1,10 @@
-<js-view js-type="AppRoot" js-baseType="AppRootBase" js-model="AppRootModel" js-css="AppRoot.css">
+<div js-type="AppRoot" js-baseType="AppRootBase" js-model="AppRootModel" js-css="AppRoot.css" class="c-AppRoot">
 
-    <div class="c-AppRoot">
+    <h1>ToggleSwitch Example</h1>
 
-        <h1>ToggleSwitch Example</h1>
-
-        <div class="viewSurface">
-            <js-view js-name="toggleSwitch" js-type="ToggleSwitch"></js-view>
-        </div>
+    <div class="viewSurface">
+        <js-view js-name="toggleSwitch" js-type="ToggleSwitch"></js-view>
+        <js-view js-name="toggleSwitch2" js-type="ToggleSwitch" js-data="{title: 'Hello!', checked:true}"></js-view>
     </div>
 
-</js-view>
+</div>

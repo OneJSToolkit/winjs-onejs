@@ -13,7 +13,13 @@ var rimraf = require('gulp-rimraf');
 var paths = {
     buildPath: 'build',
     appPath: 'app',
-    staticFiles: [ 'node_modules/requirejs/require.js', 'src/index.html']
+    staticFiles: [
+        'node_modules/requirejs/require.js',
+        'src/index.html',
+        'node_modules/winjs/js/WinJS.js',
+        'node_modules/winjs/css/ui-dark.css',
+        'node_modules/winjs/fonts/Symbols.ttf',
+        'src/typings/winjs.d.ts']
 };
 
 gulp.task('clean', function() {
