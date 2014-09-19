@@ -3,13 +3,13 @@
 var gulp = require('gulp');
 var onejsCompiler = require('gulp-onejs-compiler');
 var tsc = require('gulp-tsc');
-var clean = require('gulp-clean');
 var flatten = require('gulp-flatten');
 var add = require('gulp-add-src');
 var less = require('gulp-less');
 var csstojs = require('gulp-csstojs');
 var filter = require('gulp-filter');
 var webserver = require('gulp-webserver');
+var rimraf = require('gulp-rimraf');
 
 var paths = {
     buildPath: 'build',
@@ -18,8 +18,8 @@ var paths = {
 };
 
 gulp.task('clean', function() {
-    return gulp.src([paths.buildPath, paths.appPath])
-        .pipe(clean());
+    return gulp.src([paths.buildPath, paths.appPath], {read: false})
+        .pipe(rimraf());
 });
 
 gulp.task('tsc-preprocess', ['clean'], function() {
