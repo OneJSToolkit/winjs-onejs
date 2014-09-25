@@ -11,3 +11,7 @@ build
 
 # let's not check in the built bits for now
 app
+
+# visual studio
+*.user
+*.suo

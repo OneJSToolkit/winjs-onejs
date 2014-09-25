@@ -30,14 +30,13 @@ gulp.task('clean', function() {
 gulp.task('tsc-preprocess', ['clean'], function() {
     var lessFilter = filter('**/*.less');
 
-    return gulp.src(['node_modules/onejs-compiler/src/**/*', 'node_modules/onejs/src/**/*', 'src/**/*' ])
+    return gulp.src(['src/**/*'])
         .pipe(lessFilter)
         .pipe(less())
         .pipe(csstojs({
             typeScript: true
         }))
         .pipe(lessFilter.restore())
-        .pipe(flatten())
         .pipe(onejsCompiler())
         .pipe(gulp.dest(paths.buildPath + '/ts'));
 });

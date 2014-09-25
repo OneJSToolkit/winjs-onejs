@@ -1,4 +1,5 @@
-import AppRoot = require('AppRoot');
+/// <reference path="AppRoot/AppRoot.d.ts" />
+import AppRoot = require('./AppRoot/AppRoot');
 
 if (document.body) {
     initialize();

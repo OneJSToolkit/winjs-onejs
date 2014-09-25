@@ -1,5 +1,4 @@
-import ViewModel = require('ViewModel');
-import List = require('List');
+import ViewModel = require('../onejs/ViewModel');
 
 class ToggleSwitchModel extends ViewModel {
     checked = false;
@@ -7,7 +6,6 @@ class ToggleSwitchModel extends ViewModel {
     labelOn = "On";
     labelOff = "Off";
     title = "";
-    //onchange
 }
 
 export = ToggleSwitchModel;

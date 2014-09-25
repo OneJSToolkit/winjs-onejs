@@ -1,5 +1,5 @@
-import View = require('View');
-import ToggleSwitchModel = require('ToggleSwitchModel');
+import View = require('../onejs/View');
+import ToggleSwitchModel = require('./ToggleSwitchModel');
 //import WinJS = require('WinJS');
 /// <reference path="winjs.d.ts" />
 
