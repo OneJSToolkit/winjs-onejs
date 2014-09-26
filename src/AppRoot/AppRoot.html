@@ -1,10 +1,16 @@
 <div js-type="AppRoot" js-baseType="AppRootBase" js-model="AppRootModel" js-css="AppRoot.css" class="c-AppRoot">
 
-    <h1>ToggleSwitch Example</h1>
+    <h1>WinJS controls inside of OneJS</h1>
 
     <div class="viewSurface">
-        <js-view js-name="toggleSwitch" js-type="ToggleSwitch"></js-view>
-        <js-view js-name="toggleSwitch2" js-type="../ToggleSwitch/ToggleSwitch" js-data="{title: 'Hello!', checked:true}"></js-view>
+        <p>A simple toggle switch:</p>
+        <js-view js-name="toggleSwitch" js-type="../ToggleSwitch/ToggleSwitch"></js-view>
+        <p>A toggle switch with some custom settings coded into the view:</p>
+        <js-view js-name="toggleSwitch2" js-type="../ToggleSwitch/ToggleSwitch" js-data="{title: 'Be Awesome', labelOn: 'Yep', labelOff: 'Nope', checked:true}"></js-view>
+        <p>Data binding to a ToggleSwitch:</p>
+        <input type="text" js-bind="value:toggle.title"/>
+        <div js-bind="text:toggleTitle"></div>
+        <js-view js-name="toggleSwitch3" js-type="../ToggleSwitch/ToggleSwitch" js-data="toggle"></js-view>
     </div>
 
 </div>
