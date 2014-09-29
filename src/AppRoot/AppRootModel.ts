@@ -2,7 +2,8 @@ import List = require('../onejs/List');
 import ViewModel = require('../onejs/ViewModel');
 import ToggleSwitchModel = require('../ToggleSwitch/ToggleSwitchModel');
 import RepeaterModel = require('../Repeater/RepeaterModel');
-import Rating = require('../Rating/Rating');
+import RatingTemplate = require('../RatingTemplate/RatingTemplate');
+import RatingTemplateModel = require('../RatingTemplate/RatingTemplateModel');
 import RatingModel = require('../Rating/RatingModel');
 
 // min inclusive, max exclusive
@@ -15,7 +16,10 @@ class AppRootModel extends ViewModel {
 
     repeater = new RepeaterModel({
         template: function (item) {
-            var view = new Rating(new RatingModel({ userRating: item }));
+            //var view = new Rating(new RatingModel({ userRating: item }));
+            var view = new RatingTemplate(new RatingTemplateModel({
+                ratingModel: new RatingModel({ userRating: item })
+            }));
             var element = view.render();
             view.activate();
             return element;
