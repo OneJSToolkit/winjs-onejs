@@ -10,7 +10,7 @@ class ToggleSwitch extends View {
 	winControl;
 
 	onRender() {
-		this.winControl = new WinJS.UI.Repeater(this.getViewModel());
+		this.winControl = new WinJS.UI.Repeater(null, this.getViewModel());
 		this.element = this.winControl.element;
 		return this.element;
 	}
