@@ -3,7 +3,7 @@ import RepeaterModel = require('./RepeaterModel');
 //import WinJS = require('WinJS');
 /// <reference path="winjs.d.ts" />
 
-class ToggleSwitch extends View {
+class Repeater extends View {
 
 	viewName = 'Repeater';
 	viewModelType = RepeaterModel;
@@ -32,4 +32,4 @@ class ToggleSwitch extends View {
 
 }
 
-export = ToggleSwitch;
+export = Repeater;

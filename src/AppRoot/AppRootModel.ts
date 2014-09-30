@@ -16,7 +16,6 @@ class AppRootModel extends ViewModel {
 
     repeater = new RepeaterModel({
         template: function (item) {
-            //var view = new Rating(new RatingModel({ userRating: item }));
             var view = new RatingTemplate(new RatingTemplateModel({
                 ratingModel: new RatingModel({ userRating: item })
             }));
