@@ -2,16 +2,22 @@
 
     <h1>WinJS controls inside of OneJS</h1>
 
-    <div class="viewSurface">
-        <h2>Toggle</h2>
-        <p>A simple toggle switch:</p>
-        <js-view js-name="toggleSwitch" js-type="../ToggleSwitch/ToggleSwitch"></js-view>
-        <p>A toggle switch with some custom settings coded into the view:</p>
-        <js-view js-name="toggleSwitch2" js-type="../ToggleSwitch/ToggleSwitch" js-data="{title: 'Be Awesome', labelOn: 'Yep', labelOff: 'Nope', checked:true}"></js-view>
-        <p>Data binding to a ToggleSwitch:</p>
-        <input type="text" js-bind="value:toggle.title"/>
-        <js-view js-name="toggleSwitch3" js-type="../ToggleSwitch/ToggleSwitch" js-data="toggle"></js-view>
-    </div>
+    <js-repeat source="commands" iterator="command">
+        <div js-bind="text: command">hi</div>
+    </js-repeat>
+
+    <js-if source="condition">
+        <div class="viewSurface">
+            <h2>Toggle</h2>
+            <p>A simple toggle switch:</p>
+            <js-view js-name="toggleSwitch" js-type="../ToggleSwitch/ToggleSwitch"></js-view>
+            <p>A toggle switch with some custom settings coded into the view:</p>
+            <js-view js-name="toggleSwitch2" js-type="../ToggleSwitch/ToggleSwitch" js-data="{title: 'Be Awesome', labelOn: 'Yep', labelOff: 'Nope', checked:true}"></js-view>
+            <p>Data binding to a ToggleSwitch:</p>
+            <input type="text" js-bind="value:toggle.title" />
+            <js-view js-name="toggleSwitch3" js-type="../ToggleSwitch/ToggleSwitch" js-data="toggle"></js-view>
+        </div>
+    </js-if>
 
     <div class="viewSurface">
         <h2>Repeater</h2>

@@ -44,7 +44,8 @@ gulp.task('tsc-preprocess', ['clean'], function() {
 gulp.task('tsc', ['tsc-preprocess'], function() {
     return gulp.src(paths.buildPath + '/ts/**/*.ts')
         .pipe(tsc({
-            module: 'amd'
+            module: 'amd',
+            target: 'ES5'
         }))
         .pipe(gulp.dest(paths.appPath));
 });

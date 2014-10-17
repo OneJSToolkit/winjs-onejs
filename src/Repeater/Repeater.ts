@@ -1,23 +1,23 @@
-import View = require('../onejs/View');
+import BaseView = require('../onejs/BaseView');
 import RepeaterModel = require('./RepeaterModel');
 //import WinJS = require('WinJS');
 /// <reference path="winjs.d.ts" />
 
-class Repeater extends View {
+class Repeater extends BaseView {
 
 	viewName = 'Repeater';
 	viewModelType = RepeaterModel;
 	winControl;
 
 	onRender() {
-		this.winControl = new WinJS.UI.Repeater(null, this.getViewModel());
+		this.winControl = new WinJS.UI.Repeater(null, this.viewModel);
 		this.element = this.winControl.element;
 		return this.element;
 	}
 
 	onViewModelChanged(args) {
 		if(this.winControl) {
-			var vm = this.getViewModel();
+            var vm = this.viewModel;
 			//TODO
 		}
 	}

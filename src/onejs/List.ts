@@ -9,7 +9,7 @@ class List {
     array: any[];
     events = new EventGroup(this);
 
-    constructor(array?: any[]) {
+    constructor(array?) {
         this.array = array || [];
         this.events.declare([ CHANGE_EVENT, CHILD_CHANGE_EVENT ]);
     }
@@ -30,7 +30,7 @@ class List {
     indexOf(item) {
         return this.array.indexOf(item);
     }
-    
+
     findBy(propertyName, propertyValue) {
         for (var i = 0; i < this.array.length; i++) {
             var item = this.getAt(i);

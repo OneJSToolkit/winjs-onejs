@@ -1,16 +1,16 @@
-import View = require('../onejs/View');
+import BaseView = require('../onejs/BaseView');
 import ToggleSwitchModel = require('./ToggleSwitchModel');
 //import WinJS = require('WinJS');
 /// <reference path="winjs.d.ts" />
 
-class ToggleSwitch extends View {
+class ToggleSwitch extends BaseView {
 
 	viewName = 'ToggleSwitch';
 	viewModelType = ToggleSwitchModel;
 	winControl;
 
 	onRender() {
-		this.winControl = new WinJS.UI.ToggleSwitch(null, this.getViewModel());
+		this.winControl = new WinJS.UI.ToggleSwitch(null, this.viewModel);
 		this.winControl.onchange = this._onChange.bind(this);
 		this.element = this.winControl.element;
 		return this.element;
@@ -18,7 +18,7 @@ class ToggleSwitch extends View {
 
 	onViewModelChanged(args) {
 		if(this.winControl) {
-			var vm = this.getViewModel();
+            var vm = this.viewModel;
 			this.winControl.checked = vm.checked;
 			this.winControl.disabled = vm.disabled;
 			this.winControl.labelOn = vm.labelOn;
@@ -37,7 +37,7 @@ class ToggleSwitch extends View {
 
 	_onChange() {
 		if(this.winControl) {
-			this.getViewModel().setData({
+			this.viewModel.setData({
 				checked: this.winControl.checked
 			});
 		}

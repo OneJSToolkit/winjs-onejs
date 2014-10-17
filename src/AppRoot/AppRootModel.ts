@@ -14,11 +14,16 @@ function getRandomInt(min, max) {
 class AppRootModel extends ViewModel {
     toggle = new ToggleSwitchModel({ title: "Type here" });
 
+    condition = true;
+
+    commands = new List([1, 2, 3]);
+
     repeater = new RepeaterModel({
         template: function (item) {
-            var view = new RatingTemplate(new RatingTemplateModel({
+            var view = new RatingTemplate();
+            view.viewModel = new RatingTemplateModel({
                 ratingModel: new RatingModel({ userRating: item })
-            }));
+            });
             var element = view.render();
             view.activate();
             return element;
